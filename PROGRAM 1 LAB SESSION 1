@@ -1,0 +1,59 @@
+     CREATE A JAVA CLASS STUDENT AND FOLLOWING DETAILS AS VARAIBLE IN IT
+        1)USN
+        2)PHONE NO
+        3)NAME
+        4)BRANCH
+        WRITE A JAVA PROGRAM CREATING NSTUDENT OBJECTS AND DISPLAY THE FOOLOWING DETAILS
+
+
+import java.util.Scanner;
+public class student {
+   int usn;
+	 int phone;
+	  String name;
+	  String branch;
+	  
+	
+	void insert_record (String nm, int ph,int usn,String br )
+	{
+		name=nm;
+		phone=ph;
+		usn=usn;
+		branch=br;
+	}
+	   void display()
+	   {
+		   System.out.print(name + phone + usn +branch);
+	   }
+	public static void main(String[] args)
+	{
+		student s[]= new student[3];
+		Scanner obj=new Scanner(System.in);
+		for(int i=0;i<3;i++)
+	       {
+	    	 s[i]=new student();
+	       }
+		for(int j=0;j<3;j++)
+		{
+	System.out.println("enter student name");
+	
+	String name=obj.next();
+	System.out.println("enter usn");
+	int usn=obj.nextInt();
+	System.out.println("enter branch");
+     String branch=obj.next();
+System.out.println("enter phone nuber");
+     int phone=obj.nextInt();
+
+     s[j].insert_record(name,usn,phone,branch)	;	
+    		 }
+
+    for(int k=0;k<3;k++)
+    {
+       s[k].display();
+    }
+       
+	}
+	
+
+}
