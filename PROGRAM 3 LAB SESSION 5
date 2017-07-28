@@ -1,0 +1,26 @@
+Write a Java program to read two integers aWrite a Java program to read two integers a and b. Compute a/b and print, when b is not zero. Raise an exception when b is equal to zero. and b. Compute a/b and print, when b is not zero. Raise an exception when b is equal to zero.  import java.util.*;
+public class exception {
+	static int a=5;
+	static int b=0,c=3;
+	 static int result;
+	 static int result1;
+	public static void main(String[] args)
+	{
+		try
+		{
+			result=a/b;
+			result1=a/c;
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("Exception caught" +e);
+		}
+		finally
+		{
+			/*result=a/b;*/
+			result1=a/c;;
+			System.out.println(a+"/" +c +"="+result1);
+		}
+	}
+
+}
