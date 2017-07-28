@@ -1,0 +1,45 @@
+
+Write  a  Java  class  called Customer to  store  their  name  and  date_of_birth.  The date_of_birth  format  should  be  dd/mm/yyyy.  Write  methods  to  read  customer  data  as <name,  dd/mm/yyyy>  and  display  as  <name,  dd,  mm,  yyyy>  using  StringTokenizer class considering the delimiter character as “/”. 
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class customer {
+	String name;
+	String date;
+	    void read()
+	    {
+	    	 System.out.println("enter customer name and date");
+            Scanner obj=new Scanner(System.in);
+            name=obj.next();
+            date=obj.next();
+	    }
+               void display(){
+            	   System.out.println(name+",");
+            	   String delims="/";
+            	   StringTokenizer st=new StringTokenizer(date,delims);
+            	   while(st.hasMoreElements())
+            	   {
+            		   System.out.print(st.nextElement() +",");
+            	   }
+            	   
+            	   System.out.println();
+               }
+               public static void main(String[] args)
+               {
+            	   customer  cus[]=new customer[10];
+            	   Scanner inp=new Scanner(System.in);
+            	   System.out.println("enter the no of customer");
+            	    int n=inp.nextInt();
+            	    
+            	    for(int i=1;i<=n;i++)
+            	    {
+            	    	cus[i]=new customer();
+            	    	cus[i].read();
+            	    }
+            	    for(int i=1;i<=n;i++)
+            	    {
+            	    	cus[i].display();
+            	    }
+               }
+               
+}
