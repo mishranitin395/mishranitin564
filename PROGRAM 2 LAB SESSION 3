@@ -1,0 +1,101 @@
+Design  a  superclass  called Staff with  details  as  StaffId,  Name,  Phone,  Salary.  Extend this   class   by   writing   three   subclasses   namely Teaching (domain,   publications), Technica (skills),  and Contract(period).  Write  a  Java  program  to  read  and  display
+  at least 3 staff objects of all three categories. 
+  
+          import java.util.Scanner;
+class staff
+{
+	int staff_id;
+	int phone;
+	int salary;
+	String name;
+
+	public staff(String na,int ph,int sal,int id)
+	{
+		name=na;
+		phone=ph;
+		salary=sal;
+		staff_id=id;
+		
+	}
+	void display()
+	{
+		System.out.println("staff name:" +name);
+		System.out.println("staff phone no.:" +phone);
+		System.out.println("staff salary:" +salary);
+		System.out.println("staff id:" +staff_id);
+	}
+}
+    class teaching extends staff
+    {
+    	String domain;
+    	int no_of_pub;
+    	public teaching(String na,int ph,int sal,int id,String d,int nop)
+    	{
+    		
+    		super(na,ph,sal,id);
+    		domain=d;
+    		no_of_pub=nop;
+    	}
+    	void tdisplay()
+    	{
+    		
+    		System.out.println("------------------");
+    		System.out.println("teaching staff details");
+super.display();
+System.out.println("domain:"+domain);
+System.out.println("number of publications"+no_of_pub);
+    	}
+    }
+        class technical extends staff
+        {
+        	String skills;
+        	public technical(String na,int ph,int sal,int id,String skl)
+        	{
+        		super(na,ph,sal,id);
+        		skills=skl;
+        		
+        	}
+        	void techdisplay()
+        	{
+        		System.out.println("--------------");
+        		System.out.println("technical staff details");
+        		super.display();
+        		System.out.println("skills:"+skills);
+        	}
+        }
+        class contract  extends staff
+        {
+        	int period;
+        	public contract(String na,int ph,int sal,int id,int pd)
+        	{
+        		super(na,ph,sal,id);
+        		period=pd;
+        	}
+        	void perdisplay()
+        	{
+        		System.out.println("-------------");
+        		System.out.println("period details");
+        		super.display();
+        		System.out.println("period:"+period);
+        	}
+        }
+public class multilevel {
+	public static void main(String[] args)
+	{
+	  teaching t1=new teaching("guru",1234,3100,89,"cse",10);
+	  teaching t2=new teaching("ravi",1235,2500,36,"cse",9);
+	  teaching t3=new teaching("srivani",1236,3600,52,"cse",6);
+         t1.tdisplay();
+         t2.tdisplay();
+         t3.tdisplay();
+      technical te1=new technical("ms",3656,5648,45,"java");   
+      technical te2=new technical("bhacani",3656,5648,45,"java"); 
+      technical te3=new technical("sag",3656,5648,45,"java");
+      te1.techdisplay();
+      te2.techdisplay();
+      te3.techdisplay();
+      
+      
+	}
+	
+}
